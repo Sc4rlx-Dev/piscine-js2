@@ -1,4 +1,4 @@
-var smalls = Number.MIN_VALUE
+var smalls = -Infinity
 var biggie = Infinity
 
 
