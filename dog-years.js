@@ -10,7 +10,7 @@ const planet = {
 }
 
 function dogYears(pname, age) {
-    if(pname == 'earth') {return (age / 31557600 * 7 ).toFixed(2)}
+if(pname == 'earth') {return parseFloat((age / 31557600 * 7 ).toFixed(2))}
 return parseFloat(((age / planet.earth ) * 7 / planet[pname]).toFixed(2))
 }
 
