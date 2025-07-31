@@ -1,4 +1,3 @@
-
 function arrToSet(arr) { return new Set(arr) }
 
 function arrToStr(arr) { return arr.join("") }
@@ -21,10 +20,16 @@ function arrToObj(arr) {return {...arr}}
 
 function strToObj(str) { return Object.assign({}, [...str])}
 
+function capitalize(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase() }
+
 function superTypeOf(arg) {
     if (arg instanceof Map) return 'Map'
     if (arg instanceof Set) return 'Set'
-    return arg === null ? 'null' : typeof arg === 'string' ? arg.toUpperCase() : typeof arg
-}
+    if (arg === undefined ) return 'undefined'
+    if (arg === null ) return 'null'
+    if(typeof arg == 'object') {if (Array.isArray(arg)) return 'Array'}
 
-console.log(strToObj('hello'));
+    let cap  = typeof arg
+    cap = capitalize(cap)
+return cap
+}
