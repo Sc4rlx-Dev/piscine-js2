@@ -1,3 +1,4 @@
+
 function arrToSet(arr) { return new Set(arr) }
 
 function arrToStr(arr) { return arr.join("") }
@@ -18,11 +19,12 @@ function objToMap(obj) {return new Map(Object.entries(obj))}
 
 function arrToObj(arr) {return {...arr}} 
 
-function strToObj(str) {return JSON.parse(str)}
+function strToObj(str) { return Object.assign({}, [...str])}
 
 function superTypeOf(arg) {
-    if (arg instanceof Map) return 'map'
-    if (arg instanceof Set) return 'set'
-    return arg === null ? 'null' : typeof arg
+    if (arg instanceof Map) return 'Map'
+    if (arg instanceof Set) return 'Set'
+    return arg === null ? 'null' : typeof arg === 'string' ? arg.toUpperCase() : typeof arg
 }
 
+console.log(strToObj('hello'));
