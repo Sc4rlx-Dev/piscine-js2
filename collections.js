@@ -4,7 +4,7 @@ function arrToStr(arr) { return arr.join("") }
 
 function setToArr(set) { return Array.from(set) }
 
-function setToStr(set) { return [...set].join(',')}
+function setToStr(set) { return [...set].join('')}
 
 function strToArr(str) { return str.split(',')}
 
