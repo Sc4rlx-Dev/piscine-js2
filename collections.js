@@ -16,7 +16,7 @@ function objToArr(obj) { return Object.values(obj)}
 
 function objToMap(obj) {return new Map(Object.entries(obj))}
 
-function arrToObj(arr) {return Object.fromEntries(arr)} //{...arr}
+function arrToObj(arr) {return {...arr}} 
 
 function strToObj(str) {return JSON.parse(str)}
 
