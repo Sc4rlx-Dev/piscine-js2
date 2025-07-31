@@ -1,6 +1,6 @@
 function arrToSet(arr) { return new Set(arr) }
 
-function arrToStr(arr) { return arr.toString() }
+function arrToStr(arr) { return arr.join("") }
 
 function setToArr(set) { return Array.from(set) }
 
