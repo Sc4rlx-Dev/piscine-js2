@@ -1,9 +1,11 @@
-function indexOf(arr , match) {
-    for(let i = 0 ; i <= arr.length ; i++){
+function indexOf(arr , match , index) {
+    if(!index){ index = 0 }
+    for(let i = index ; i <= arr.length ; i++){
         if(arr[i] == match){
             return i
         }
     }
+return -1
 }
 function lastIndexOf(arr , match) {
     for(let i = arr.length; i >= 0; i--){
@@ -15,10 +17,7 @@ function lastIndexOf(arr , match) {
 
 
 function includes(a , b ) {
-    return indexOf(a,b) != undefined ? true : false
+    return indexOf(a,b) != -1 ? true : false
 }
-
-
-
 
 
