@@ -14,8 +14,8 @@ return res
 
 function divide(a, b) {
     let sign = 1
-    if(a < 0){ a *= -1 ; sign *= -1 }
-    if(b < 0){ b *= -1 ; sign *= -1 }
+    if(a < 0){ a = multiply(a, -1); sign = multiply(sign, -1) }
+    if(b < 0){ b = multiply(b, -1); sign = multiply(sign, -1) }
 
     let p = 0
     let q = 0
@@ -25,7 +25,7 @@ function divide(a, b) {
         p = multiply(q , b)
     }
 
-return q * sign
+return multiply(q , sign)
 }
 
 function modulo(a , b) {
