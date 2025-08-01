@@ -2,12 +2,8 @@ function slice(arg , startindex ,opIndex){
     let res = []
     let len = opIndex
     if(startindex < 0 && opIndex < 0){
-        if (typeof arg == "string"){
-            len = arg.length + opIndex
-            startindex = arg.length + startindex
-        } else {
-            return []
-        }
+        len = arg.length + opIndex
+        startindex = arg.length + startindex
     }
     if(!startindex && !opIndex){return arg}
     if(!opIndex){ len = arg.length}
@@ -24,6 +20,10 @@ function slice(arg , startindex ,opIndex){
 return res
 }
 
+// test = [1, 2, 3, 4, 5, 6]
+
+// console.log(slice(test, -3, -1), [4, 5])
+// console.log(test.slice( -3, -1), [4, 5])
 // const s = "The quick brown fox jumps over the lazy dog."
 
 
@@ -41,7 +41,7 @@ return res
 
 // console.log(slice(s, -9, -5));
 // console.log(s.slice(-9, -5));
-// // Expected output: "lazy"
+// Expected output: "lazy"
 
 
 // const a = ["ant", "bison", "camel", "duck", "elephant"]
