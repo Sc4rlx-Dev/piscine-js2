@@ -14,6 +14,7 @@ function lastIndexOf(arr , match , index) {
             return i
         }
     }
+return -1
 }
 
 
