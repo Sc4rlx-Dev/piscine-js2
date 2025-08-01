@@ -68,23 +68,21 @@ return res
 }
 
 function divide(a, b) {
-    let sign = 1
-    if(a < 0){ a = multiply(a, -1); sign = multiply(sign, -1) }
-    if(b < 0){ b = multiply(b, -1); sign = multiply(sign, -1) }
 
-    let p = 0
-    let q = 0
+    let sign = 1;
+    if (a < 0) { a = -a; sign = -sign; }
+    if (b < 0) { b = -b; sign = -sign; }
 
-    while(p + b <= a){
-        q++
-        p = multiply(q , b)
+    let q = 0;
+    while (a >= b) {
+        a -= b;
+        q++;
     }
 
-return multiply(q , sign)
+    return sign * q;
 }
 
-function modulo(a , b) {
-    let q = divide(a, b)
-    let p = multiply(q, b)
-    return a - p
+
+function modulo(a, b) {
+    return a - multiply(divide(a, b), b);
 }
