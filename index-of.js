@@ -7,8 +7,9 @@ function indexOf(arr , match , index) {
     }
 return -1
 }
-function lastIndexOf(arr , match) {
-    for(let i = arr.length; i >= 0; i--){
+function lastIndexOf(arr , match , index) {
+    if(!index) { index = arr.length }
+    for(let i = index; i >= 0; i--){
         if(arr[i] == match){
             return i
         }
@@ -19,5 +20,7 @@ function lastIndexOf(arr , match) {
 function includes(a , b ) {
     return indexOf(a,b) != -1 ? true : false
 }
+
+
 
 
