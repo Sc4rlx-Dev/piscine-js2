@@ -11,8 +11,10 @@ function split(str, sep) {
         arr.push(str.slice(i , index))
         i = index + sep.length
     }
+    if (str.slice(-sep.length) === sep) arr.push("")
 return arr
 }
+console.log(split('ee,ff,g,', ','), ['ee', 'ff', 'g', ''])
 
 function join(arr , sep) {
     let res = ''
@@ -24,4 +26,3 @@ function join(arr , sep) {
     }
 return res
 }
-
