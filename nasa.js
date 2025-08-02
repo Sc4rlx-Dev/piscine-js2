@@ -3,10 +3,10 @@ function NA(i)   { return (i % 3 === 0) ? "NA" : null }
 function SA(i)   { return (i % 5 === 0) ? "SA" : null }
 
 function nasa(N , i = 1) {
-    if(i > N) return
-    let res = NASA(i) || NA(i) || SA(i) || i
-    console.log(res)
-    return nasa(N , i + 1) 
+    if(i > N) return ""
+    const res = NASA(i) || NA(i) || SA(i) || i
+    const rest = nasa(N , i + 1) 
+    return i ===  N  ? `${res}` : `${res} ${rest}`
 }
 
-// nasa(15)
+console.log(nasa(15))
