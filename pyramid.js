@@ -3,9 +3,7 @@ function pyramid(str, n) {
     for (let i = 1; i <= n; i++) {
         const s = " ".repeat(n - i)
         const ch = str.repeat(2 * i - 1)
-        res += s + ch + (i < n ? '\n' : '')
+        res += s + ch + '\n'
     }
 return res
 }
-
-
