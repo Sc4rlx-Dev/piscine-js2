@@ -34,3 +34,17 @@ console.log(str.slice(-4));
 
 console.log(str.slice(-9, -5));
 // Expected output: "lazy"
+
+
+
+
+"
+mkdir -p ~/Desktop/vscode_backup && cp -r ~/.config/Code/User ~/Desktop/vscode_backup/
+"
+cp -r ~/Desktop/vscode_backup/User ~/.config/Code/User
+"
+
+cp -ru ~/Desktop/vscode_backup/User/* ~/.config/Code/User/
+"
+rm -rf ~/.config/Code/User && cp -r ~/Desktop/vscode_backup/User ~/.config/Code/User
+"
