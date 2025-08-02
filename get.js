@@ -1,17 +1,15 @@
 
 function get(src, path) {
     const keys = path.split('.')
-    if (!src || typeof path !== 'string') return undefined
     let acc = src
     for (const k of keys) {
+        if (acc == undefined || acc == null){return undefined}
         acc = acc[k]
     }
 return acc
 }
 
+// console.log(get({ nested: { key: 'value' } }, 'nx.nx') === undefined)
 
-// const src = { nested: { key: 'peekaboo' } }
-// const path = 'nested.key'
-// // get(src, path)
-// console.log(get(src, path)) // -> 'peekaboo'
+
 
