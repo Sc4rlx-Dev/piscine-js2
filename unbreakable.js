@@ -1,14 +1,17 @@
 function split(str, sep) {
-    let buf = []
-    let start = 0
-    let i
-
-    while ((i = str.indexOf(sep, start)) !== -1) {
-        buf.push(str.slice(start, i))
-        start = i + sep.length
+    if(sep === ""){return [...str]}
+    let arr = []
+    let i = 0 
+    while( i < str.length) {
+        let index = str.indexOf(sep , i)
+        if(index === -1) {
+            arr.push(str.slice(i))
+            break;
+        }
+        arr.push(str.slice(i , index))
+        i = index + sep.length
     }
-    buf.push(str.slice(start))
-return buf
+return arr
 }
 
 function join(arr , sep) {
@@ -21,3 +24,4 @@ function join(arr , sep) {
     }
 return res
 }
+
