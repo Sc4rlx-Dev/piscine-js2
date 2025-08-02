@@ -1,15 +1,13 @@
-function split(str , sep) {
-    let tmp = ''
+function split(str, sep) {
     let buf = []
-    for(let i = 0; i < str.length ; i++){
-        if(str[i] === sep){
-            buf.push(tmp)
-            tmp = ''
-        } else {
-            tmp += str[i]
-        }
+    let start = 0
+    let i
+
+    while ((i = str.indexOf(sep, start)) !== -1) {
+        buf.push(str.slice(start, i))
+        start = i + sep.length
     }
-    buf.push(tmp)
+    buf.push(str.slice(start))
 return buf
 }
 
