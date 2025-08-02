@@ -11,3 +11,5 @@ function DNA (str) {
     for(const i of str){ rna += obj2[i]}
 return rna
 }
+
+
