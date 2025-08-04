@@ -1,7 +1,8 @@
 var ru = /(https?:\/\/[^\s]+)/g
-var rq = /\?([^#]+)/g
+var rq = /\?([^#]+)/
 
 function getURL(str) {
+    ru.lastIndex = 0
     let arr = []
     for(let m = ru.exec(str) ; m !== null ; m = ru.exec(str)){
         arr.push(m[0])
@@ -11,6 +12,7 @@ function getURL(str) {
 
 
 function greedyQuery(str) {
+    rq.lastIndex = 0
     let arr = []
     for(let q = rq.exec(str) ; q !== null ; q = rq.exec(str)){
         arr.push(q[0])
@@ -19,6 +21,7 @@ function greedyQuery(str) {
 }
 
 function notSoGreedy(str) {
+    ru.lastIndex = 0
     let arr = []
     for(let m = ru.exec(str) ; m !== null ; m = ru.exec(str)){
         let qM = rq.exec(m[0])
