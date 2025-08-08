@@ -18,8 +18,8 @@ function isWeekend(date) {
 }
 
 function isLeapYear(date) {
-    const year = new Date(date)
-    return year % 400 == 0 || (year % 100 != 0 && year % 4 == 0).getFullYear()
+    const year = new Date(date).getFullYear()
+    return year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)
 }
 
 function isLastDayOfMonth(date) {
