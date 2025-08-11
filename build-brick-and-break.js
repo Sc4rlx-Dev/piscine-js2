@@ -1,9 +1,12 @@
-export const build = (n) =>{
-    for (let i = 0 ; i <= n ; i++){
-        const b = document.createElement('div') ; b.id = `brick-${i}`
-        if(i % 3 == 2) b.dataset.foundation = 'true'
-        document.body.appendChild(b)
-    }
+export const build = (n) => {
+    let i = 1
+    const int = setInterval(() => {
+        if (i>n) { clearInterval(int) ; return}
+        const br = document.createElement("div") ; br.id = `brick-${i}`
+        if (i % 3 === 2) { br.dataset.foundation = 'true' }
+        document.body.appendChild(br)
+        i++
+    }, 100)
 }
 
 export const repair = (...ids) => {
