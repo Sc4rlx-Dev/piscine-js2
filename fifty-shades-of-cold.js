@@ -10,18 +10,20 @@ export function generateClasses() {
 
 export function generateColdShades() {
     const key = ['aqua', 'blue', 'turquoise', 'green', 'cyan', 'navy' , 'purple']
-    const coldColors = colors.filter(c => key.includes(c))
+    const colr = colors.filter(c => key.find(k => c.includes(k)))
+    // console.log(colr)
 
-    coldColors.forEach(sh => {
-        const d = document.createElement('div')
-        d.className = sh
-        d.textContent = sh
-        document.body.appendChild(d)
-    })
+    colr.forEach(sh => {
+        const d= document.createElement('div')
+        d.className=sh
+        d.textContent=sh
+        document.body.appendChild(d)})
 }   
 
 
 export function choseShade(sh) {
-    const all = document.querySelectorAll('div')
+    const all = document.querySelector('all')
     all.forEach(d => { d.className = sh })
 }
+
+
