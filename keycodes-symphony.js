@@ -1,3 +1,5 @@
+// keycodes-symphony.js
+
 export function compose() {
     document.addEventListener('keydown', (event) => {
         const key = event.key
@@ -6,6 +8,7 @@ export function compose() {
             const note = document.createElement('div')
             note.classList.add('note')
             note.textContent = key
+            note.style.backgroundColor = 'lightblue'
             document.body.appendChild(note)
             return
         }
