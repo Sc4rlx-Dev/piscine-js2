@@ -17,13 +17,14 @@ export function generateColdShades() {
         const d= document.createElement('div')
         d.className=sh
         d.textContent=sh
+        d.addEventListener('click', () => choseShade(sh))
         document.body.appendChild(d)})
 }   
 
-
 export function choseShade(sh) {
-    const all = document.querySelector('all')
+    const all = document.querySelectorAll('div')
     all.forEach(d => { d.className = sh })
 }
+
 
 
