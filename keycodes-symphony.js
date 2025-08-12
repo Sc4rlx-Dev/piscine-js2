@@ -8,7 +8,8 @@ export function compose() {
             const note = document.createElement('div')
             note.classList.add('note')
             note.textContent = key
-            note.style.backgroundColor = 'lightblue'
+            const hue = (key.charCodeAt(0) - 97) * 4;
+            note.style.backgroundColor = 'hsl(' + hue + ', 70%, 60%)'
             document.body.appendChild(note)
             return
         }
